@@ -1,5 +1,7 @@
 ---
+import Terminal from './Terminal.astro';
 ---
+
 <section class="relative bg-white dark:bg-gray-900 overflow-hidden">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 sm:pt-24 sm:pb-20">
     <div class="lg:grid lg:grid-cols-12 lg:gap-8">
@@ -30,15 +32,7 @@
       </div>
       
       <div class="mt-12 relative lg:mt-0 lg:col-span-5">
-        <div class="relative mx-auto w-full rounded-lg shadow-lg lg:max-w-md">
-          <div class="relative block w-full bg-gradient-to-br from-indigo-500/10 to-purple-500/10 rounded-lg overflow-hidden h-64 sm:h-72 md:h-96">
-            <svg class="absolute inset-0 w-full h-full text-indigo-600/20" fill="currentColor" viewBox="0 0 600 600">
-              <path d="M300 0L565.7 150v300L300 600 34.3 450V150L300 0z"/>
-              <path d="M300 100l165.7 93.3v186.6L300 473.2l-165.7-93.3V193.3L300 100z" fill="currentColor" opacity="0.2"/>
-              <path d="M300 200l82.8 46.7v93.3L300 386.6l-82.8-46.7v-93.3L300 200z" fill="currentColor" opacity="0.3"/>
-            </svg>
-          </div>
-        </div>
+        <Terminal />
       </div>
     </div>
   </div>
