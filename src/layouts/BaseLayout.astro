@@ -9,17 +9,45 @@ interface Props {
 const { title, description } = Astro.props;
 ---
 
-<!doctype html>
-<html lang="en">
+<html lang="en" class="h-full antialiased">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content={description} />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description}>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <!-- Force initial color scheme based on system preference -->
+    <script is:inline>
+      if (typeof window !== 'undefined') {
+        const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.toggle('dark', isDarkMode);
+      }
+    </script>
   </head>
-  <body class="min-h-screen bg-white dark:bg-gray-900">
+  <body class="h-full bg-white dark:bg-gray-900">
     <slot />
   </body>
 </html>
+
+<style is:global>
+  /* Optional: Add transition for smooth theme switching */
+  html.transition,
+  html.transition *,
+  html.transition *:before,
+  html.transition *:after {
+    transition: all 250ms !important;
+    transition-delay: 0 !important;
+  }
+</style>
+
+<script>
+  function setTransitionClass() {
+    document.documentElement.classList.add('transition');
+    window.setTimeout(() => {
+      document.documentElement.classList.remove('transition');
+    }, 250);
+  }
+  
+  const themeToggle = document.getElementById('theme-toggle');
+  themeToggle?.addEventListener('click', setTransitionClass);
+</script>

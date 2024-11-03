@@ -1,4 +1,6 @@
 ---
+import ThemeToggle from './ThemeToggle.astro';
+
 const links = [
   { text: 'About', href: '/about' },
   { text: 'Blog', href: '/blog' },
@@ -11,9 +13,23 @@ const links = [
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between h-16">
       <div class="flex-shrink-0 flex items-center">
-        <a href="/" class="text-xl font-bold">DevEx</a>
+        <a href="/" class="text-xl font-bold text-gray-900 dark:text-white">DevEx</a>
       </div>
       
+      <!-- Desktop and ThemeToggle -->
+      <div class="flex items-center gap-8">
+        <div class="hidden sm:flex sm:space-x-8">
+          {links.map(({ text, href }) => (
+            <a
+              href={href}
+              class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 dark:text-gray-100"
+            >
+              {text}
+            </a>
+          ))}
+        </div>
+        <ThemeToggle />
+      </div>
       <!-- Mobile menu button -->
       <div class="flex items-center sm:hidden">
         <button
@@ -27,18 +43,6 @@ const links = [
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
-      </div>
-      
-      <!-- Desktop menu -->
-      <div class="hidden sm:flex sm:space-x-8">
-        {links.map(({ text, href }) => (
-          <a
-            href={href}
-            class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 dark:text-gray-100"
-          >
-            {text}
-          </a>
-        ))}
       </div>
     </div>
   </div>
@@ -55,6 +59,7 @@ const links = [
         </a>
       ))}
     </div>
+    <ThemeToggle />
   </div>
 </nav>
 
