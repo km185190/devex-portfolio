@@ -127,9 +127,9 @@ module.exports = {
   theme: {
     extend: {
       // Your custom extensions
-    }
-  }
-}
+    },
+  },
+};
 ```
 
 2. Add custom CSS:
@@ -275,6 +275,7 @@ pnpm build
 4. Submit pull request
 
 Would you like me to:
+
 1. Add more specific troubleshooting guides?
 2. Include example component implementations?
 3. Add deployment workflow details?

@@ -1,49 +1,61 @@
 ---
 const areas = [
   {
-    title: 'DevOps Excellence',
+    title: "DevOps Excellence",
     items: [
-      'CI/CD Pipeline Automation',
-      'Cloud Infrastructure (GCP)',
-      'Container Orchestration',
-      'Security Integration',
+      "CI/CD Pipeline Automation",
+      "Cloud Infrastructure (GCP)",
+      "Container Orchestration",
+      "Security Integration",
     ],
   },
   {
-    title: 'Developer Experience',
+    title: "Developer Experience",
     items: [
-      'Workflow Optimization',
-      'Tool Selection & Integration',
-      'Process Automation',
-      'Team Empowerment',
+      "Workflow Optimization",
+      "Tool Selection & Integration",
+      "Process Automation",
+      "Team Empowerment",
     ],
   },
   {
-    title: 'Technical Leadership',
+    title: "Technical Leadership",
     items: [
-      'Team Mentorship',
-      'Architecture Design',
-      'Best Practices Implementation',
-      'Process Improvement',
+      "Team Mentorship",
+      "Architecture Design",
+      "Best Practices Implementation",
+      "Process Improvement",
     ],
   },
 ];
 ---
 
 <div class="grid md:grid-cols-3 gap-8">
-  {areas.map((area) => (
-    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
-      <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">{area.title}</h3>
-      <ul class="space-y-2">
-        {area.items.map((item) => (
-          <li class="flex items-center text-gray-600 dark:text-gray-400">
-            <svg class="w-4 h-4 mr-2 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-            </svg>
-            {item}
-          </li>
-        ))}
-      </ul>
-    </div>
-  ))}
+  {
+    areas.map((area) => (
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">
+          {area.title}
+        </h3>
+        <ul class="space-y-2">
+          {area.items.map((item) => (
+            <li class="flex items-center text-gray-600 dark:text-gray-400">
+              <svg
+                class="w-4 h-4 mr-2 text-indigo-600"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))
+  }
 </div>

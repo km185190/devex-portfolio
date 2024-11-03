@@ -1,96 +1,112 @@
 ---
+
 ---
+
 <div class="w-full h-full flex items-center justify-center p-4">
-    <div class="w-full max-w-2xl bg-gray-900 rounded-lg shadow-2xl overflow-hidden">
-      {/* Terminal Header */}
-      <div class="flex items-center px-4 py-3 bg-gray-800 border-b border-gray-700">
-        <div class="flex space-x-2">
-          <div class="w-3 h-3 rounded-full bg-red-500"></div>
-          <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-          <div class="w-3 h-3 rounded-full bg-green-500"></div>
-        </div>
-        <div class="ml-4 text-sm text-gray-400">DevEx Pipeline</div>
+  <div
+    class="w-full max-w-2xl bg-gray-900 rounded-lg shadow-2xl overflow-hidden"
+  >
+    {/* Terminal Header */}
+    <div
+      class="flex items-center px-4 py-3 bg-gray-800 border-b border-gray-700"
+    >
+      <div class="flex space-x-2">
+        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+        <div class="w-3 h-3 rounded-full bg-green-500"></div>
       </div>
-      
-      {/* Terminal Content */}
-      <div class="p-4 font-mono text-sm">
-        <div class="pipeline-content space-y-2">
-          <div class="flex items-center text-gray-300">
-            <span class="text-green-400">$</span>
-            <span class="ml-2 typing-effect">initialize_pipeline --optimize</span>
+      <div class="ml-4 text-sm text-gray-400">DevEx Pipeline</div>
+    </div>
+
+    {/* Terminal Content */}
+    <div class="p-4 font-mono text-sm">
+      <div class="pipeline-content space-y-2">
+        <div class="flex items-center text-gray-300">
+          <span class="text-green-400">$</span>
+          <span class="ml-2 typing-effect">initialize_pipeline --optimize</span>
+        </div>
+
+        <div class="pipeline-steps space-y-2 ml-4">
+          <div class="step-1 opacity-0">
+            <span class="text-green-400">✓</span>
+            <span class="ml-2 text-gray-300">Analyzing current setup...</span>
           </div>
-          
-          <div class="pipeline-steps space-y-2 ml-4">
-            <div class="step-1 opacity-0">
-              <span class="text-green-400">✓</span>
-              <span class="ml-2 text-gray-300">Analyzing current setup...</span>
+
+          <div class="step-2 opacity-0">
+            <span class="text-green-400">✓</span>
+            <span class="ml-2 text-gray-300">Running security checks...</span>
+          </div>
+
+          <div class="step-3 opacity-0">
+            <span class="text-green-400">✓</span>
+            <span class="ml-2 text-gray-300">Optimizing build process...</span>
+          </div>
+
+          <div class="step-4 opacity-0">
+            <span class="text-green-400">✓</span>
+            <span class="ml-2 text-gray-300">Deploying to production...</span>
+          </div>
+
+          <div class="step-5 opacity-0">
+            <div class="text-indigo-400 mt-4">
+              Pipeline optimization complete:
             </div>
-            
-            <div class="step-2 opacity-0">
-              <span class="text-green-400">✓</span>
-              <span class="ml-2 text-gray-300">Running security checks...</span>
+            <div class="ml-2 text-gray-300">→ 85% faster deployments</div>
+            <div class="ml-2 text-gray-300">
+              → Zero security vulnerabilities
             </div>
-            
-            <div class="step-3 opacity-0">
-              <span class="text-green-400">✓</span>
-              <span class="ml-2 text-gray-300">Optimizing build process...</span>
-            </div>
-            
-            <div class="step-4 opacity-0">
-              <span class="text-green-400">✓</span>
-              <span class="ml-2 text-gray-300">Deploying to production...</span>
-            </div>
-            
-            <div class="step-5 opacity-0">
-              <div class="text-indigo-400 mt-4">
-                Pipeline optimization complete:
-              </div>
-              <div class="ml-2 text-gray-300">
-                → 85% faster deployments
-              </div>
-              <div class="ml-2 text-gray-300">
-                → Zero security vulnerabilities
-              </div>
-              <div class="ml-2 text-gray-300">
-                → 99.9% success rate
-              </div>
-            </div>
+            <div class="ml-2 text-gray-300">→ 99.9% success rate</div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  
-  <style>
-    .typing-effect {
-      border-right: 2px solid #818CF8;
-      animation: blink 1s step-end infinite;
+</div>
+
+<style>
+  .typing-effect {
+    border-right: 2px solid #818cf8;
+    animation: blink 1s step-end infinite;
+  }
+
+  .pipeline-steps > div {
+    animation: fadeSlideIn 0.5s ease-out forwards;
+  }
+
+  .step-1 {
+    animation-delay: 1s;
+  }
+  .step-2 {
+    animation-delay: 2s;
+  }
+  .step-3 {
+    animation-delay: 3s;
+  }
+  .step-4 {
+    animation-delay: 4s;
+  }
+  .step-5 {
+    animation-delay: 5s;
+  }
+
+  @keyframes blink {
+    from,
+    to {
+      border-color: transparent;
     }
-    
-    .pipeline-steps > div {
-      animation: fadeSlideIn 0.5s ease-out forwards;
+    50% {
+      border-color: #818cf8;
     }
-    
-    .step-1 { animation-delay: 1s; }
-    .step-2 { animation-delay: 2s; }
-    .step-3 { animation-delay: 3s; }
-    .step-4 { animation-delay: 4s; }
-    .step-5 { animation-delay: 5s; }
-    
-    @keyframes blink {
-      from, to { border-color: transparent }
-      50% { border-color: #818CF8; }
+  }
+
+  @keyframes fadeSlideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
     }
-    
-    @keyframes fadeSlideIn {
-      from {
-        opacity: 0;
-        transform: translateY(-10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
-  </style>
-  
+  }
+</style>

@@ -14,23 +14,31 @@ const { title, description, pubDate, category, slug } = Astro.props;
   <div class="p-6">
     <div class="flex items-center gap-x-4 text-xs mb-4">
       <time datetime={pubDate.toISOString()} class="text-gray-500">
-        {pubDate.toLocaleDateString('en-US', {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric',
-        })}
+        {
+          pubDate.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })
+        }
       </time>
-      <span class="relative z-10 rounded-full bg-indigo-50 dark:bg-indigo-900 px-3 py-1.5 font-medium text-indigo-600 dark:text-indigo-300">
+      <span
+        class="relative z-10 rounded-full bg-indigo-50 dark:bg-indigo-900 px-3 py-1.5 font-medium text-indigo-600 dark:text-indigo-300"
+      >
         {category}
       </span>
     </div>
     <div class="group">
-      <h3 class="text-lg font-semibold leading-6 text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400">
+      <h3
+        class="text-lg font-semibold leading-6 text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400"
+      >
         <a href={`/blog/${slug}`}>
           {title}
         </a>
       </h3>
-      <p class="mt-3 text-sm leading-6 text-gray-600 dark:text-gray-400 line-clamp-3">
+      <p
+        class="mt-3 text-sm leading-6 text-gray-600 dark:text-gray-400 line-clamp-3"
+      >
         {description}
       </p>
     </div>

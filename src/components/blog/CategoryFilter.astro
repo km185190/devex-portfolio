@@ -1,25 +1,36 @@
 ---
-const categories = ['All', 'DevOps', 'Developer Experience', 'Tutorials', 'Case Studies'];
-const currentCategory = Astro.url.searchParams.get('category') || 'All';
+const categories = [
+  "All",
+  "DevOps",
+  "Developer Experience",
+  "Tutorials",
+  "Case Studies",
+];
+const currentCategory = Astro.url.searchParams.get("category") || "All";
 ---
 
 <div class="flex gap-2 flex-wrap mb-8">
-  {categories.map((category) => {
-    const isActive = currentCategory === category;
-    const href = category === 'All' ? '/blog' : `/blog?category=${encodeURIComponent(category)}`;
-    
-    return (
-      <a
-        href={href}
-        class:list={[
-          'px-3 py-1 rounded-full text-sm transition-colors duration-200',
-          isActive 
-            ? 'bg-indigo-600 text-white'
-            : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700'
-        ]}
-      >
-        {category}
-      </a>
-    );
-  })}
+  {
+    categories.map((category) => {
+      const isActive = currentCategory === category;
+      const href =
+        category === "All"
+          ? "/blog"
+          : `/blog?category=${encodeURIComponent(category)}`;
+
+      return (
+        <a
+          href={href}
+          class:list={[
+            "px-3 py-1 rounded-full text-sm transition-colors duration-200",
+            isActive
+              ? "bg-indigo-600 text-white"
+              : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700",
+          ]}
+        >
+          {category}
+        </a>
+      );
+    })
+  }
 </div>
