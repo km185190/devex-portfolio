@@ -2,13 +2,29 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Navigation from '../components/shared/Navigation.astro';
 import Hero from '../components/home/Hero.astro';
-import Features from '../components/home/Features.astro';
+import Stats from '../components/home/Stats.astro';
+import FeaturedWork from '../components/home/FeaturedWork.astro';
+import Testimonials from '../components/home/Testimonials.astro';
 ---
 
-<BaseLayout title="DevEx Portfolio - Building Better Developer Experiences" description="Creating environments where technical excellence enables human creativity">
+<BaseLayout>
   <Navigation />
-  <main>
-    <Hero />
-    <Features />
-  </main>
+  <Hero />
+  <Stats />
+  <FeaturedWork />
+  <Testimonials />
+  
+  <section class="py-16 bg-gray-50 dark:bg-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white mb-8">
+        Ready to Transform Your Development Experience?
+      </h2>
+      <a
+        href="/contact"
+        class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700"
+      >
+        Start the Conversation
+      </a>
+    </div>
+  </section>
 </BaseLayout>
