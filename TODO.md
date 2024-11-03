@@ -3,3 +3,4 @@
 - Improve about page
 - Cleanup readme
 - Break down large components as need for modularity
+- SEO
