@@ -2,29 +2,23 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Navigation from "../components/shared/Navigation.astro";
 import Hero from "../components/home/Hero.astro";
-import Stats from "../components/home/Stats.astro";
+import Features from "../components/home/Features.astro";
 import FeaturedWork from "../components/home/FeaturedWork.astro";
 import Testimonials from "../components/home/Testimonials.astro";
+import FinalCTA from "../components/home/FinalCTA.astro";
 ---
 
-<BaseLayout>
+<BaseLayout
+  title="DevEx Consulting - Building Better Developer Experiences"
+  description="Transform your development workflows with expert DevOps consulting focused on developer experience, security, and automation."
+>
   <Navigation />
-  <Hero />
-  <Stats />
-  <FeaturedWork />
-  <Testimonials />
 
-  <section class="py-16 bg-gray-50 dark:bg-gray-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white mb-8">
-        Ready to Transform Your Development Experience?
-      </h2>
-      <a
-        href="/contact"
-        class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700"
-      >
-        Start the Conversation
-      </a>
-    </div>
-  </section>
+  <main class="relative">
+    <Hero />
+    <Features />
+    <FeaturedWork />
+    <Testimonials />
+    <FinalCTA />
+  </main>
 </BaseLayout>

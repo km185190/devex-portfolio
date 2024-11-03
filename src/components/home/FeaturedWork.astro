@@ -4,54 +4,121 @@ const projects = [
     title: "CI/CD Pipeline Optimization",
     description:
       "Reduced deployment time by 85% through automated workflows and optimized processes.",
-    link: "/blog/case-studies",
-    image: "pipeline.svg",
+    metrics: [
+      { label: "Deployment Time", value: "-85%" },
+      { label: "Build Success Rate", value: "99.9%" },
+    ],
+    icon: `<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+    </svg>`,
   },
   {
-    title: "Developer Experience Enhancement",
+    title: "DevEx Platform Implementation",
     description:
       "Streamlined development workflows and improved team productivity with standardized environments.",
-    link: "/blog/case-studies",
-    image: "devex.svg",
+    metrics: [
+      { label: "Team Velocity", value: "+60%" },
+      { label: "Onboarding Time", value: "-75%" },
+    ],
+    icon: `<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+    </svg>`,
   },
   {
-    title: "Security Integration",
+    title: "Security Automation",
     description:
       "Implemented automated security scanning and compliance checks without sacrificing speed.",
-    link: "/blog/case-studies",
-    image: "security.svg",
+    metrics: [
+      { label: "Security Coverage", value: "100%" },
+      { label: "Issue Detection", value: "<24h" },
+    ],
+    icon: `<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+    </svg>`,
   },
 ];
 ---
 
-<section class="py-16 bg-gray-50 dark:bg-gray-800">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center">
+<section class="relative py-20 bg-white dark:bg-gray-900 overflow-hidden">
+  {/* Background Elements */}
+  <div
+    class="absolute inset-0 bg-gradient-to-b from-gray-50/50 to-white dark:from-gray-800/50 dark:to-gray-900"
+  >
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16">
       <h2
-        class="text-2xl sm:text-3xl font-extrabold text-gray-900 dark:text-white"
+        class="text-base text-indigo-600 dark:text-indigo-400 font-semibold tracking-wide uppercase"
       >
-        Featured Work
+        Case Studies
       </h2>
       <p
-        class="mt-4 max-w-2xl mx-auto text-lg sm:text-xl text-gray-500 dark:text-gray-400"
+        class="mt-2 text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl"
       >
-        Real results from real transformations
+        Featured Work
+      </p>
+      <p class="mt-4 text-xl text-gray-500 dark:text-gray-400">
+        Real transformations delivering measurable results
       </p>
     </div>
 
-    <div class="mt-12 grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="grid gap-8 lg:grid-cols-3">
       {
         projects.map((project) => (
-          <a href={project.link} class="block group">
-            <div class="h-full bg-white dark:bg-gray-700 rounded-lg shadow-sm overflow-hidden transition-shadow hover:shadow-md p-6">
-              <h3 class="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400">
-                {project.title}
-              </h3>
-              <p class="mt-2 text-sm sm:text-base text-gray-500 dark:text-gray-400">
-                {project.description}
-              </p>
+          <div class="group relative">
+            <div class="h-full bg-white dark:bg-gray-800 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-200 border border-gray-100 dark:border-gray-700 overflow-hidden">
+              <div class="p-8">
+                <div class="inline-flex items-center justify-center p-3 bg-indigo-100 dark:bg-indigo-900/50 rounded-xl text-indigo-600 dark:text-indigo-400 mb-4 group-hover:scale-110 transition-transform duration-200">
+                  <Fragment set:html={project.icon} />
+                </div>
+
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">
+                  {project.title}
+                </h3>
+
+                <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+                  {project.description}
+                </p>
+
+                {/* Metrics */}
+                <div class="grid grid-cols-2 gap-4 mt-auto">
+                  {project.metrics.map((metric) => (
+                    <div class="bg-gray-50 dark:bg-gray-700/50 rounded-lg p-3">
+                      <div class="text-lg font-bold text-indigo-600 dark:text-indigo-400">
+                        {metric.value}
+                      </div>
+                      <div class="text-sm text-gray-500 dark:text-gray-400">
+                        {metric.label}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div class="px-8 py-4 bg-gray-50 dark:bg-gray-800/50 border-t border-gray-100 dark:border-gray-700">
+                <a
+                  href="/case-studies"
+                  class="inline-flex items-center text-sm font-medium text-indigo-600 dark:text-indigo-400 group-hover:text-indigo-500 dark:group-hover:text-indigo-300 transition-colors duration-200"
+                >
+                  View Case Study
+                  <svg
+                    class="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform duration-200"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </a>
+              </div>
             </div>
-          </a>
+          </div>
         ))
       }
     </div>

@@ -1,9 +1,30 @@
 ---
-import Terminal from "./Terminal.astro";
+const companyLogos = [
+  {
+    name: "GitHub",
+    logo: "/images/logos/github.svg",
+    width: 120,
+  },
+  {
+    name: "MongoDB",
+    logo: "/images/logos/mongodb.svg",
+    width: 120,
+  },
+  {
+    name: "Vercel",
+    logo: "/images/logos/vercel.svg",
+    width: 120,
+  },
+  {
+    name: "GitLab",
+    logo: "/images/logos/gitlab.svg",
+    width: 100,
+  },
+];
 ---
 
 <section
-  class="relative bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 overflow-hidden"
+  class="relative bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 overflow-hidden min-h-[90vh] flex items-center"
 >
   {/* Background Pattern */}
   <div class="absolute inset-0 opacity-10 dark:opacity-20">
@@ -14,92 +35,166 @@ import Terminal from "./Terminal.astro";
     </div>
   </div>
 
-  <div
-    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 sm:pt-24 sm:pb-20 relative"
-  >
-    <div class="lg:grid lg:grid-cols-12 lg:gap-8">
-      <div class="sm:text-center lg:text-left lg:col-span-7">
-        {/* Availability Badge */}
-        <div
-          class="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-indigo-50 text-indigo-600 dark:bg-indigo-900/50 dark:text-indigo-300 mb-6"
-        >
-          <span class="flex h-2 w-2 mr-2 relative">
-            <span
-              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"
-            ></span>
-            <span
-              class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"
-            ></span>
-          </span>
-          Available for New Projects
-        </div>
+  {/* Floating Elements - Purely Decorative */}
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div
+      class="absolute top-1/4 left-4 w-72 h-72 bg-indigo-400/30 dark:bg-indigo-600/20 rounded-full blur-3xl"
+    >
+    </div>
+    <div
+      class="absolute bottom-1/4 right-4 w-72 h-72 bg-blue-400/30 dark:bg-blue-600/20 rounded-full blur-3xl"
+    >
+    </div>
+  </div>
 
-        <h1
-          class="text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl animate-fade-in"
-        >
-          <span class="block text-gray-900 dark:text-white"
-            >Building Better</span
-          >
-          <span class="block text-indigo-600 dark:text-indigo-400"
-            >Developer Experiences</span
-          >
-        </h1>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
+    <div class="text-center mx-auto max-w-4xl">
+      {/* Availability Badge */}
+      <div
+        class="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-indigo-50 text-indigo-600 dark:bg-indigo-900/50 dark:text-indigo-300 mb-6 animate-fade-in"
+      >
+        <span class="flex h-2 w-2 mr-2 relative">
+          <span
+            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"
+          ></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"
+          ></span>
+        </span>
+        Available for New Projects
+      </div>
 
-        <p
-          class="mt-6 text-xl text-gray-500 dark:text-gray-400 sm:text-2xl max-w-3xl leading-relaxed animate-fade-in-delayed"
+      {/* Main Heading */}
+      <h1
+        class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight animate-fade-in"
+      >
+        <span class="block text-gray-900 dark:text-white mb-2"
+          >Building Better</span
         >
-          Transforming development workflows into seamless, secure, and
-          enjoyable experiences. Proven expertise in DevOps consulting that
-          delivers measurable results.
+        <span
+          class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-blue-500 dark:from-indigo-400 dark:to-blue-400"
+        >
+          Developer Experiences
+        </span>
+      </h1>
+
+      {/* Subheading */}
+      <p
+        class="mt-6 text-lg sm:text-xl md:text-2xl text-gray-500 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed animate-fade-in-delayed"
+      >
+        Transforming development workflows into seamless, secure, and enjoyable
+        experiences. Proven expertise in DevOps consulting that delivers
+        measurable results.
+      </p>
+
+      {/* CTA Buttons */}
+      <div
+        class="mt-8 sm:mt-12 flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-delayed-2"
+      >
+        <a
+          href="/contact"
+          class="group inline-flex items-center justify-center px-8 py-3 text-base sm:text-lg font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+        >
+          Start the Conversation
+          <svg
+            class="ml-2 h-5 w-5 transform transition-transform group-hover:translate-x-1"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </a>
+        <a
+          href="/services"
+          class="inline-flex items-center justify-center px-8 py-3 text-base sm:text-lg font-medium rounded-md text-indigo-600 bg-white dark:bg-gray-800 border-2 border-indigo-600 dark:border-indigo-400 dark:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-gray-700 transition-all duration-200"
+        >
+          View Services
+        </a>
+      </div>
+
+      {/* Metrics Grid */}
+      <div
+        class="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 animate-fade-in-delayed-3"
+      >
+        {
+          [
+            { value: "85%", label: "Deployment Time Reduced" },
+            { value: "3x", label: "Release Frequency" },
+            { value: "90%", label: "Issue Reduction" },
+            { value: "24h", label: "Response Time" },
+          ].map((metric) => (
+            <div class="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-lg p-4 sm:p-6 border border-gray-200 dark:border-gray-700">
+              <div class="text-2xl sm:text-3xl font-bold text-indigo-600 dark:text-indigo-400">
+                {metric.value}
+              </div>
+              <div class="text-sm sm:text-base text-gray-600 dark:text-gray-400 mt-1">
+                {metric.label}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      {/* Trust Indicators */}
+      <div
+        class="mt-16 pt-8 border-t border-gray-200 dark:border-gray-700/50 animate-fade-in-delayed-3"
+      >
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-6">
+          Trusted by engineering teams from
         </p>
-
         <div
-          class="mt-8 sm:mt-12 flex flex-col sm:flex-row gap-4 animate-fade-in-delayed-2"
+          class="flex flex-wrap justify-center items-center gap-x-12 gap-y-8"
         >
-          <a
-            href="/contact"
-            class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:text-lg transition-colors duration-200 shadow-lg hover:shadow-xl"
-          >
-            Start the Conversation
-          </a>
-          <a
-            href="/services"
-            class="inline-flex items-center justify-center px-8 py-3 border-2 border-indigo-600 text-base font-medium rounded-md text-indigo-600 bg-transparent hover:bg-indigo-50 dark:border-indigo-400 dark:text-indigo-400 dark:hover:bg-indigo-900/50 md:text-lg transition-colors duration-200"
-          >
-            View Services
-          </a>
-        </div>
-
-        {/* Trust Indicators */}
-        <div
-          class="mt-12 pt-6 border-t border-gray-200 dark:border-gray-700 animate-fade-in-delayed-3"
-        >
-          <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">
-            Trusted by teams from:
-          </p>
-          <div class="flex flex-wrap items-center gap-x-8 gap-y-4 opacity-60">
-            <img
-              src="/api/placeholder/120/40"
-              alt="Company 1"
-              class="h-8 grayscale"
-            />
-            <img
-              src="/api/placeholder/120/40"
-              alt="Company 2"
-              class="h-8 grayscale"
-            />
-            <img
-              src="/api/placeholder/120/40"
-              alt="Company 3"
-              class="h-8 grayscale"
-            />
-          </div>
+          {
+            companyLogos.map((company) => (
+              <div class="group relative">
+                <img
+                  src={company.logo}
+                  alt={`${company.name} logo`}
+                  width={company.width}
+                  height={40}
+                  class="h-8 sm:h-10 w-auto 
+                 transition-all duration-200
+                 filter-to-primary
+                 opacity-60 group-hover:opacity-100"
+                />
+              </div>
+            ))
+          }
         </div>
       </div>
 
-      <div class="mt-12 relative lg:mt-0 lg:col-span-5">
-        <Terminal />
-      </div>
+      <style>
+        /* CSS filter to convert black SVG to theme colors */
+        .filter-to-primary {
+          /* Light mode - converts black to gray-600 */
+          filter: invert(35%) sepia(15%) saturate(276%) hue-rotate(176deg)
+            brightness(96%) contrast(92%);
+        }
+
+        /* Dark mode - converts black to gray-300 */
+        :global(.dark) .filter-to-primary {
+          filter: invert(90%) sepia(0%) saturate(0%) hue-rotate(153deg)
+            brightness(97%) contrast(91%);
+        }
+
+        /* On hover, convert to primary brand color */
+        .group:hover .filter-to-primary {
+          /* Light mode hover - converts to indigo-600 */
+          filter: invert(27%) sepia(88%) saturate(2229%) hue-rotate(230deg)
+            brightness(89%) contrast(98%);
+        }
+
+        /* Dark mode hover - converts to indigo-400 */
+        :global(.dark) .group:hover .filter-to-primary {
+          filter: invert(66%) sepia(81%) saturate(934%) hue-rotate(201deg)
+            brightness(99%) contrast(94%);
+        }
+      </style>
     </div>
   </div>
 </section>
@@ -117,6 +212,7 @@ import Terminal from "./Terminal.astro";
   }
 
   .animate-fade-in {
+    opacity: 0;
     animation: fadeInUp 0.5s ease-out forwards;
   }
 

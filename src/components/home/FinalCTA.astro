@@ -1,0 +1,112 @@
+---
+
+---
+
+<section class="relative py-24 overflow-hidden">
+  {/* Background with gradient overlay */}
+  <div
+    class="absolute inset-0 bg-gradient-to-br from-indigo-600 to-blue-700 dark:from-indigo-900 dark:to-blue-900"
+  >
+    <div class="absolute inset-0 bg-grid-white/[0.1] bg-[size:16px_16px]"></div>
+  </div>
+
+  {/* Floating orbs */}
+  <div class="absolute inset-0 overflow-hidden">
+    <div
+      class="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl"
+    >
+    </div>
+    <div
+      class="absolute -bottom-40 -left-40 w-80 h-80 bg-white/10 rounded-full blur-3xl"
+    >
+    </div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-6">
+        Ready to Transform Your Development Experience?
+      </h2>
+
+      <p class="text-lg sm:text-xl text-indigo-100 mb-8 leading-relaxed">
+        Let's build a development environment where your team can focus on what
+        matters most: creating exceptional software.
+      </p>
+
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a
+          href="/contact"
+          class="inline-flex items-center justify-center px-8 py-3 text-base sm:text-lg font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50 transition-colors duration-200"
+        >
+          Schedule a Consultation
+          <svg
+            class="ml-2 h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </a>
+
+        <a
+          href="/services"
+          class="inline-flex items-center justify-center px-8 py-3 text-base sm:text-lg font-medium rounded-md text-white border-2 border-white/20 hover:bg-white/10 transition-colors duration-200"
+        >
+          View Services
+        </a>
+      </div>
+
+      {/* Additional Info */}
+      <div
+        class="mt-12 flex flex-col sm:flex-row justify-center gap-4 sm:gap-8 text-sm text-indigo-100"
+      >
+        <div class="flex items-center justify-center">
+          <svg
+            class="h-5 w-5 mr-2"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          Response within 24 hours
+        </div>
+        <div class="flex items-center justify-center">
+          <svg
+            class="h-5 w-5 mr-2"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          Free initial consultation
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .bg-grid-white {
+    background-image: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.1) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  }
+</style>
