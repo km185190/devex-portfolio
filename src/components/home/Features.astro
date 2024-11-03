@@ -3,47 +3,82 @@ const features = [
   {
     title: "Security & Quality First",
     description:
-      "Building secure, high-quality systems by design, not afterthought. Automated security scanning, quality gates, and continuous compliance monitoring.",
+      "Building secure, high-quality systems by design, not afterthought.",
+    details: [
+      "Automated security scanning",
+      "Quality gates & metrics",
+      "Compliance monitoring",
+      "Secure by default",
+    ],
     icon: `<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
     </svg>`,
+    gradient: "from-blue-500 to-indigo-500",
   },
   {
     title: "Developer Flow",
     description:
-      "Creating seamless development experiences that enable focus and productivity. Streamlined workflows, automated tooling, and intuitive processes.",
+      "Creating seamless development experiences that enable focus and productivity.",
+    details: [
+      "Streamlined workflows",
+      "Automated tooling",
+      "Clear documentation",
+      "Self-service platforms",
+    ],
     icon: `<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
     </svg>`,
+    gradient: "from-indigo-500 to-purple-500",
   },
   {
     title: "Team Empowerment",
     description:
-      "Enabling teams to ship confidently with automated workflows, clear processes, and comprehensive documentation that evolves with your needs.",
+      "Enabling teams to ship confidently with automated workflows and clear processes.",
+    details: [
+      "Knowledge sharing",
+      "Automated processes",
+      "Team autonomy",
+      "Clear ownership",
+    ],
     icon: `<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
     </svg>`,
+    gradient: "from-purple-500 to-pink-500",
   },
   {
     title: "Visible Impact",
     description:
-      "Measuring and demonstrating the value of DevOps improvements through comprehensive metrics, clear reporting, and tangible business outcomes.",
+      "Measuring and demonstrating the value of DevOps improvements through data.",
+    details: [
+      "Clear metrics",
+      "Performance tracking",
+      "Business alignment",
+      "ROI measurement",
+    ],
     icon: `<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
     </svg>`,
+    gradient: "from-pink-500 to-rose-500",
   },
 ];
 ---
 
-<section class="relative py-20 bg-white dark:bg-gray-900 overflow-hidden">
-  {/* Background Gradient */}
+<section class="relative py-24 bg-white dark:bg-gray-900 overflow-hidden">
+  {/* Background Elements */}
   <div
-    class="absolute inset-0 bg-gradient-to-b from-gray-50/50 to-white dark:from-gray-800/50 dark:to-gray-900"
+    class="absolute inset-0 bg-grid-slate-100 dark:bg-grid-slate-800/[0.1] [mask-image:linear-gradient(0deg,white,transparent)] dark:[mask-image:linear-gradient(0deg,rgba(17,24,39,1),transparent)]"
   >
+  </div>
+  <div class="absolute inset-0 flex items-center justify-center">
+    <div
+      class="w-[80rem] h-[40rem] bg-indigo-50 dark:bg-indigo-900/20 rounded-full blur-3xl opacity-20"
+    >
+    </div>
   </div>
 
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center max-w-3xl mx-auto mb-16">
+    {/* Header */}
+    <div class="text-center max-w-3xl mx-auto mb-20">
       <h2
         class="text-base text-indigo-600 dark:text-indigo-400 font-semibold tracking-wide uppercase"
       >
@@ -60,21 +95,56 @@ const features = [
       </p>
     </div>
 
+    {/* Features Grid */}
     <div class="grid gap-8 lg:grid-cols-2">
       {
         features.map((feature) => (
-          <div class="relative group">
-            <div class="h-full bg-white dark:bg-gray-800 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-200 border border-gray-100 dark:border-gray-700">
-              <div class="p-8">
-                <div class="inline-flex items-center justify-center p-3 bg-indigo-100 dark:bg-indigo-900/50 rounded-xl text-indigo-600 dark:text-indigo-400 mb-4 group-hover:scale-110 transition-transform duration-200">
+          <div class="group relative">
+            <div class="relative h-full bg-white dark:bg-gray-800 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 p-8 overflow-hidden">
+              {/* Gradient Orb */}
+              <div
+                class={`absolute right-0 top-0 -mr-16 -mt-16 w-64 h-64 rounded-full bg-gradient-to-br ${feature.gradient} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}
+              />
+
+              <div class="relative">
+                {/* Icon */}
+                <div class="inline-flex items-center justify-center p-3 bg-gradient-to-br from-white to-indigo-50 dark:from-gray-800 dark:to-gray-700 rounded-xl text-indigo-600 dark:text-indigo-400 group-hover:scale-110 transition-transform duration-300 shadow-sm">
                   <Fragment set:html={feature.icon} />
                 </div>
-                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                  {feature.title}
-                </h3>
-                <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-                  {feature.description}
-                </p>
+
+                {/* Content */}
+                <div class="mt-6">
+                  <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                    {feature.title}
+                  </h3>
+                  <p class="mt-3 text-gray-500 dark:text-gray-400">
+                    {feature.description}
+                  </p>
+
+                  {/* Feature List */}
+                  <ul class="mt-6 space-y-3">
+                    {feature.details.map((detail) => (
+                      <li class="flex items-center">
+                        <svg
+                          class="h-5 w-5 text-indigo-500 dark:text-indigo-400 mr-3"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                        <span class="text-gray-600 dark:text-gray-300">
+                          {detail}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -83,3 +153,25 @@ const features = [
     </div>
   </div>
 </section>
+
+<style>
+  .bg-grid-slate-100 {
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.1) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .bg-grid-slate-800 {
+    background-image: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.1) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+</style>
