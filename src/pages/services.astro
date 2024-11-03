@@ -1,105 +1,380 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Navigation from "../components/shared/Navigation.astro";
-import ServiceCard from "../components/services/ServiceCard.astro";
 
 const services = [
   {
     title: "DevOps Audit & Roadmap",
+    subtitle: "Start Your Transformation Journey",
     description:
       "Comprehensive assessment of your current DevOps practices with actionable recommendations for improvement.",
-    timeline: "2-week assessment",
+    timeframe: "2-3 weeks",
+    price: "Starting at $15,000",
+    ideal:
+      "Perfect for teams looking to understand their current state and plan improvements",
     highlights: [
-      "In-depth current state analysis",
-      "Pain points identification",
-      "Security and performance review",
+      "In-depth analysis of current workflows",
+      "Security and compliance review",
+      "Performance bottleneck identification",
       "Cost optimization opportunities",
     ],
     deliverables: [
-      "Comprehensive audit report",
-      "Prioritized recommendation list",
-      "90-day implementation roadmap",
-      "Executive summary presentation",
-      "30-day support",
+      "Detailed assessment report",
+      "Prioritized improvement roadmap",
+      "ROI projections",
+      "Executive presentation",
     ],
+    gradient: "from-blue-500 to-indigo-500",
+    popular: false,
   },
   {
-    title: "Implementation Project",
+    title: "Implementation Sprint",
+    subtitle: "Accelerate Your DevOps Evolution",
     description:
-      "Hands-on implementation of DevOps best practices and automation, tailored to your team's needs.",
-    timeline: "6-8 week engagement",
+      "Hands-on implementation of key DevOps practices and automation, tailored to your team's needs.",
+    timeframe: "6-8 weeks",
+    price: "Starting at $45,000",
+    ideal: "Ideal for teams ready to make meaningful DevOps improvements",
     highlights: [
       "CI/CD pipeline optimization",
-      "Automation implementation",
-      "Security integration",
+      "Security automation integration",
       "Environment standardization",
+      "Monitoring implementation",
     ],
     deliverables: [
-      "Automated CI/CD pipeline",
-      "Security scanning setup",
+      "Automated deployment pipelines",
+      "Infrastructure as Code setup",
+      "Security scanning integration",
       "Team training workshops",
-      "Complete documentation",
-      "90-day support",
     ],
-    isPopular: true,
+    gradient: "from-indigo-500 to-purple-500",
+    popular: true,
   },
   {
     title: "Full DevOps Transformation",
+    subtitle: "Complete Platform Evolution",
     description:
-      "Complete overhaul of your development practices, tools, and culture for maximum efficiency.",
-    timeline: "3-4 month engagement",
+      "End-to-end transformation of your development practices, tools, and culture for maximum efficiency.",
+    timeframe: "3-4 months",
+    price: "Starting at $95,000",
+    ideal: "For organizations committed to a complete DevOps transformation",
     highlights: [
-      "Complete DevOps platform setup",
+      "Complete platform modernization",
       "Custom tooling development",
       "Team upskilling program",
-      "Culture transformation",
+      "Process optimization",
     ],
     deliverables: [
-      "End-to-end DevOps platform",
-      "Custom automation tools",
-      "Comprehensive training program",
-      "Long-term roadmap",
-      "6-month support",
+      "Modern DevOps platform",
+      "Automated workflows",
+      "Custom tools and scripts",
+      "Comprehensive documentation",
     ],
+    gradient: "from-purple-500 to-pink-500",
+    popular: false,
   },
 ];
 ---
 
 <BaseLayout
-  title="Services - DevOps Consulting"
-  description="DevOps transformation and consulting services"
+  title="DevOps Services - Transform Your Development Experience"
+  description="Expert DevOps consulting services to improve your team's efficiency, security, and delivery speed."
 >
   <Navigation />
 
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 pt-24">
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-        DevOps Transformation Services
-      </h1>
-      <p class="text-xl text-gray-600 dark:text-gray-400">
-        From assessment to implementation, I help teams build better development
-        experiences through DevOps excellence.
-      </p>
-    </div>
-
-    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-      {services.map((service) => <ServiceCard {...service} />)}
-    </div>
-
-    <div class="mt-16 text-center">
-      <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-        Custom Solutions Available
-      </h2>
-      <p class="text-gray-600 dark:text-gray-400 mb-8">
-        Need something specific? Let's discuss your unique requirements and
-        create a custom solution that works for your team.
-      </p>
-      <a
-        href="/contact"
-        class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700"
+  <main class="relative pt-16">
+    {/* Hero Section */}
+    <section class="relative py-20 overflow-hidden">
+      {/* Background Elements */}
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800"
       >
-        Schedule a Consultation
-      </a>
-    </div>
+      </div>
+      <div
+        class="absolute inset-0 bg-grid-slate-100 dark:bg-grid-slate-800/[0.1] [mask-image:linear-gradient(0deg,white,transparent)] dark:[mask-image:linear-gradient(0deg,rgba(17,24,39,1),transparent)]"
+      >
+      </div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto">
+          <h1
+            class="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl md:text-6xl"
+          >
+            DevOps Transformation Services
+          </h1>
+          <p
+            class="mt-6 text-xl text-gray-500 dark:text-gray-400 leading-relaxed"
+          >
+            From assessment to implementation, we help teams build better
+            development experiences through DevOps excellence. Choose the
+            engagement model that best fits your needs.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* Services Grid */}
+    <section class="relative py-20 bg-white dark:bg-gray-900">
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-8 lg:grid-cols-3">
+          {
+            services.map((service) => (
+              <div class="relative group">
+                <div
+                  class={`absolute inset-0 rounded-3xl bg-gradient-to-b ${service.gradient} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}
+                />
+
+                <div class="relative h-full bg-white dark:bg-gray-800 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden">
+                  {service.popular && (
+                    <div class="absolute top-0 right-0 mt-4 mr-4">
+                      <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200">
+                        Most Popular
+                      </span>
+                    </div>
+                  )}
+
+                  <div class="p-8">
+                    <div class="mb-8">
+                      <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                        {service.title}
+                      </h3>
+                      <p class="text-sm text-indigo-600 dark:text-indigo-400 font-medium">
+                        {service.subtitle}
+                      </p>
+                    </div>
+
+                    <p class="text-gray-600 dark:text-gray-400 mb-6">
+                      {service.description}
+                    </p>
+
+                    <div class="space-y-4 mb-8">
+                      <div class="flex justify-between text-sm">
+                        <span class="text-gray-500 dark:text-gray-400">
+                          Timeframe
+                        </span>
+                        <span class="font-medium text-gray-900 dark:text-white">
+                          {service.timeframe}
+                        </span>
+                      </div>
+                      <div class="flex justify-between text-sm">
+                        <span class="text-gray-500 dark:text-gray-400">
+                          Investment
+                        </span>
+                        <span class="font-medium text-gray-900 dark:text-white">
+                          {service.price}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="mb-8">
+                      <p class="text-sm text-gray-500 dark:text-gray-400 italic mb-2">
+                        {service.ideal}
+                      </p>
+                    </div>
+
+                    <div class="space-y-6">
+                      {/* Key Highlights */}
+                      <div>
+                        <h4 class="text-sm font-semibold text-gray-900 dark:text-white mb-3">
+                          Key Highlights
+                        </h4>
+                        <ul class="space-y-2">
+                          {service.highlights.map((highlight) => (
+                            <li class="flex items-start">
+                              <svg
+                                class="h-5 w-5 text-indigo-500 dark:text-indigo-400 mr-2"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                              >
+                                <path
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2"
+                                  d="M5 13l4 4L19 7"
+                                />
+                              </svg>
+                              <span class="text-sm text-gray-600 dark:text-gray-300">
+                                {highlight}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Deliverables */}
+                      <div>
+                        <h4 class="text-sm font-semibold text-gray-900 dark:text-white mb-3">
+                          What You Get
+                        </h4>
+                        <ul class="space-y-2">
+                          {service.deliverables.map((deliverable) => (
+                            <li class="flex items-start">
+                              <svg
+                                class="h-5 w-5 text-indigo-500 dark:text-indigo-400 mr-2"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                              >
+                                <path
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2"
+                                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                                />
+                              </svg>
+                              <span class="text-sm text-gray-600 dark:text-gray-300">
+                                {deliverable}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Card Footer with Fixed Button */}
+                  <div class="p-6 bg-gray-50 dark:bg-gray-800/50 border-t border-gray-100 dark:border-gray-700">
+                    <a
+                      href="/contact"
+                      class="block w-full text-center px-6 py-3 text-base font-medium rounded-lg text-white transition-all duration-200"
+                      style={{
+                        background:
+                          service.gradient === "from-blue-500 to-indigo-500"
+                            ? "linear-gradient(to right, rgb(59, 130, 246), rgb(99, 102, 241))"
+                            : service.gradient ===
+                                "from-indigo-500 to-purple-500"
+                              ? "linear-gradient(to right, rgb(99, 102, 241), rgb(168, 85, 247))"
+                              : "linear-gradient(to right, rgb(168, 85, 247), rgb(236, 72, 153))",
+                      }}
+                    >
+                      Schedule a Consultation
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    {/* FAQ Section */}
+    <section class="relative py-20 bg-gray-50 dark:bg-gray-800">
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto">
+          <h2
+            class="text-3xl font-extrabold text-gray-900 dark:text-white text-center mb-12"
+          >
+            Frequently Asked Questions
+          </h2>
+
+          <div class="space-y-8">
+            <div>
+              <h3
+                class="text-lg font-medium text-gray-900 dark:text-white mb-2"
+              >
+                How quickly can we start?
+              </h3>
+              <p class="text-base text-gray-600 dark:text-gray-400">
+                We can typically begin within 1-2 weeks of contract signing. For
+                urgent needs, we also offer expedited start options.
+              </p>
+            </div>
+
+            <div>
+              <h3
+                class="text-lg font-medium text-gray-900 dark:text-white mb-2"
+              >
+                Do you offer remote services?
+              </h3>
+              <p class="text-base text-gray-600 dark:text-gray-400">
+                Yes, all our services are available remotely. We use a
+                combination of video calls, collaboration tools, and async
+                communication to work effectively with teams worldwide.
+              </p>
+            </div>
+
+            <div>
+              <h3
+                class="text-lg font-medium text-gray-900 dark:text-white mb-2"
+              >
+                What technologies do you work with?
+              </h3>
+              <p class="text-base text-gray-600 dark:text-gray-400">
+                We have experience with most modern DevOps tools and cloud
+                platforms, including AWS, GCP, Azure, Kubernetes, Jenkins,
+                GitLab, GitHub Actions, and more.
+              </p>
+            </div>
+
+            <div>
+              <h3
+                class="text-lg font-medium text-gray-900 dark:text-white mb-2"
+              >
+                How do you ensure knowledge transfer?
+              </h3>
+              <p class="text-base text-gray-600 dark:text-gray-400">
+                Knowledge transfer is built into our process through pair
+                programming, documentation, training sessions, and hands-on
+                workshops with your team.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* CTA Section */}
+    <section class="relative py-20 bg-white dark:bg-gray-900">
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto">
+          <h2
+            class="text-3xl font-extrabold text-gray-900 dark:text-white mb-8"
+          >
+            Ready to Transform Your Development Experience?
+          </h2>
+          <p class="text-xl text-gray-500 dark:text-gray-400 mb-8">
+            Let's discuss how we can help your team achieve DevOps excellence.
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a
+              href="/contact"
+              class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-indigo-600 hover:bg-indigo-700 transition-colors duration-200 shadow-sm"
+            >
+              Schedule a Free Consultation
+            </a>
+            <a
+              href="/case-studies"
+              class="inline-flex items-center justify-center px-8 py-3 border-2 border-indigo-600 text-base font-medium rounded-lg text-indigo-600 bg-transparent hover:bg-indigo-50 dark:border-indigo-400 dark:text-indigo-400 dark:hover:bg-indigo-900/50 transition-colors duration-200"
+            >
+              View Case Studies
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 </BaseLayout>
+
+<style>
+  .bg-grid-slate-100 {
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.1) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .bg-grid-slate-800 {
+    background-image: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.1) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+</style>
