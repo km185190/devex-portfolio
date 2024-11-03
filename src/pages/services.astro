@@ -1,0 +1,99 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navigation from '../components/shared/Navigation.astro';
+import ServiceCard from '../components/services/ServiceCard.astro';
+
+const services = [
+  {
+    title: "DevOps Audit & Roadmap",
+    description: "Comprehensive assessment of your current DevOps practices with actionable recommendations for improvement.",
+    timeline: "2-week assessment",
+    highlights: [
+      "In-depth current state analysis",
+      "Pain points identification",
+      "Security and performance review",
+      "Cost optimization opportunities"
+    ],
+    deliverables: [
+      "Comprehensive audit report",
+      "Prioritized recommendation list",
+      "90-day implementation roadmap",
+      "Executive summary presentation",
+      "30-day support"
+    ]
+  },
+  {
+    title: "Implementation Project",
+    description: "Hands-on implementation of DevOps best practices and automation, tailored to your team's needs.",
+    timeline: "6-8 week engagement",
+    highlights: [
+      "CI/CD pipeline optimization",
+      "Automation implementation",
+      "Security integration",
+      "Environment standardization"
+    ],
+    deliverables: [
+      "Automated CI/CD pipeline",
+      "Security scanning setup",
+      "Team training workshops",
+      "Complete documentation",
+      "90-day support"
+    ],
+    isPopular: true
+  },
+  {
+    title: "Full DevOps Transformation",
+    description: "Complete overhaul of your development practices, tools, and culture for maximum efficiency.",
+    timeline: "3-4 month engagement",
+    highlights: [
+      "Complete DevOps platform setup",
+      "Custom tooling development",
+      "Team upskilling program",
+      "Culture transformation"
+    ],
+    deliverables: [
+      "End-to-end DevOps platform",
+      "Custom automation tools",
+      "Comprehensive training program",
+      "Long-term roadmap",
+      "6-month support"
+    ]
+  }
+];
+---
+
+<BaseLayout title="Services - DevOps Consulting" description="DevOps transformation and consulting services">
+  <Navigation />
+  
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 pt-24">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+        DevOps Transformation Services
+      </h1>
+      <p class="text-xl text-gray-600 dark:text-gray-400">
+        From assessment to implementation, I help teams build better development experiences through DevOps excellence.
+      </p>
+    </div>
+
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {services.map((service) => (
+        <ServiceCard {...service} />
+      ))}
+    </div>
+    
+    <div class="mt-16 text-center">
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+        Custom Solutions Available
+      </h2>
+      <p class="text-gray-600 dark:text-gray-400 mb-8">
+        Need something specific? Let's discuss your unique requirements and create a custom solution that works for your team.
+      </p>
+      <a
+        href="/contact"
+        class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700"
+      >
+        Schedule a Consultation
+      </a>
+    </div>
+  </main>
+</BaseLayout>

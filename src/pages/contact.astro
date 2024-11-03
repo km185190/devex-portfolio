@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navigation from '../components/shared/Navigation.astro';
+import ContactForm from '../components/contact/ContactForm.astro';
+import ContactInfo from '../components/contact/ContactInfo.astro';
+---
+
+<BaseLayout title="Contact - DevOps Consulting" description="Get in touch to discuss your DevOps transformation needs">
+  <Navigation />
+  
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 pt-24">
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+        Let's Build Something Great Together
+      </h1>
+      <p class="text-xl text-gray-600 dark:text-gray-400">
+        Ready to improve your development experience? Let's discuss how I can help your team achieve DevOps excellence.
+      </p>
+    </div>
+
+    <div class="max-w-4xl mx-auto">
+      <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
+        <div class="px-6 py-8">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Get in Touch</h2>
+          <ContactForm />
+        </div>
+      </div>
+
+      <div class="mt-12">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Other Ways to Connect</h2>
+        <ContactInfo />
+      </div>
+
+      <div class="mt-12 text-center">
+        <p class="text-gray-600 dark:text-gray-400">
+          Typically respond within 24 hours during business days.
+        </p>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
