@@ -2,15 +2,23 @@
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "baseUrl": ".",
+    "types": ["astro/client"],
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
     "paths": {
       "@/*": ["src/*"],
       "@components/*": ["src/components/*"],
-      "@layouts/*": ["src/layouts/*"],
-      "@content/*": ["src/content/*"],
+      "@ui/*": ["src/components/ui/*"],
+      "@shared/*": ["src/components/shared/*"],
+      "@features/*": ["src/components/features/*"],
       "@utils/*": ["src/utils/*"],
-      "@styles/*": ["src/styles/*"]
+      "@config/*": ["src/config/*"],
+      "@types/*": ["src/types/*"]
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react"
-  }
+  },
+  "include": ["src/**/*.ts", "src/**/*.astro"],
+  "exclude": ["node_modules"]
 }

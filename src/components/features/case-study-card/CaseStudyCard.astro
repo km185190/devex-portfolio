@@ -1,0 +1,72 @@
+---
+import type { CaseStudyCardProps } from "./types";
+import Card from "@/components/shared/card/Card.astro";
+import Button from "@/components/ui/button/Button.astro";
+
+interface Props extends CaseStudyCardProps {}
+
+const { title, description, industry, results, slug, className } = Astro.props;
+---
+
+<Card hoverable className={`group ${className}`}>
+  <div class="p-6">
+    <div class="flex items-center gap-x-4 text-xs mb-4">
+      <span
+        class="relative z-10 rounded-full bg-indigo-50 dark:bg-indigo-900 px-3 py-1.5 font-medium text-indigo-600 dark:text-indigo-300"
+      >
+        {industry}
+      </span>
+    </div>
+
+    <div>
+      <h3
+        class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 mb-4"
+      >
+        <a href={`/case-studies/${slug}`}>
+          {title}
+        </a>
+      </h3>
+      <p class="text-gray-600 dark:text-gray-400 mb-6">
+        {description}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4">
+      {
+        results.slice(0, 2).map((result) => (
+          <div class="bg-gray-50 dark:bg-gray-700/50 rounded-lg p-4">
+            <div class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
+              {result.value}
+            </div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">
+              {result.metric}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="mt-6">
+      <Button
+        variant="ghost"
+        color="primary"
+        href={`/case-studies/${slug}`}
+        class="group-hover:bg-indigo-50 dark:group-hover:bg-indigo-900/50"
+      >
+        Read Case Study
+        <svg
+          class="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform duration-200"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+        </svg>
+      </Button>
+    </div>
+  </div>
+</Card>

@@ -1,0 +1,27 @@
+---
+import type { ContainerProps } from "./types";
+import { twMerge } from "tailwind-merge";
+
+interface Props extends ContainerProps {}
+
+const { size = "lg", padding = true, className, ...rest } = Astro.props;
+
+const sizes = {
+  sm: "max-w-3xl",
+  md: "max-w-5xl",
+  lg: "max-w-7xl",
+  xl: "max-w-[96rem]",
+  full: "max-w-none",
+};
+
+const containerStyles = twMerge(
+  "mx-auto w-full",
+  sizes[size],
+  padding && "px-4 sm:px-6 lg:px-8",
+  className
+);
+---
+
+<div class={containerStyles} {...rest}>
+  <slot />
+</div>

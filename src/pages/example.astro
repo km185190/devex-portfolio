@@ -1,0 +1,34 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Section } from "@/layouts/components";
+import { Button, Card } from "@/components";
+
+const title = "Example Page";
+const description = "Example page description";
+---
+
+<BaseLayout {title} {description}>
+  <Section background="gradient" padding="lg">
+    <div class="text-center">
+      <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-6">
+        Welcome to the Example
+      </h1>
+      <p class="text-xl text-gray-600 dark:text-gray-400 mb-8">
+        This is an example of our new component structure
+      </p>
+      <Button variant="solid" color="primary" size="lg"> Get Started </Button>
+      <Button variant="outline" color="primary" size="lg"> Get Started </Button>
+      <Button variant="ghost" color="primary" size="lg"> Get Started </Button>
+    </div>
+  </Section>
+
+  <Section background="light" padding="md">
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <Card hoverable>
+        <h2 class="text-xl font-bold mb-4">Feature 1</h2>
+        <p class="text-gray-600 dark:text-gray-400">Description of feature 1</p>
+      </Card>
+      <!-- More cards -->
+    </div>
+  </Section>
+</BaseLayout>

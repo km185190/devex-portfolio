@@ -1,0 +1,45 @@
+---
+import type { SectionProps } from "./types";
+import { twMerge } from "tailwind-merge";
+import Container from "../container/Container.astro";
+
+interface Props extends SectionProps {
+  containerSize?: "sm" | "md" | "lg" | "xl" | "full";
+}
+
+const {
+  background = "none",
+  padding = "md",
+  containerSize = "lg",
+  className,
+  ...rest
+} = Astro.props;
+
+const backgroundStyles = {
+  none: "",
+  light: "bg-gray-50 dark:bg-gray-800",
+  dark: "bg-gray-900 dark:bg-gray-900",
+  gradient:
+    "bg-gradient-to-br from-indigo-50 to-blue-50 dark:from-gray-900 dark:to-gray-800",
+};
+
+const paddingStyles = {
+  none: "",
+  sm: "py-12",
+  md: "py-16",
+  lg: "py-24",
+};
+
+const sectionStyles = twMerge(
+  "relative",
+  backgroundStyles[background],
+  paddingStyles[padding],
+  className
+);
+---
+
+<section class={sectionStyles} {...rest}>
+  <Container size={containerSize}>
+    <slot />
+  </Container>
+</section>

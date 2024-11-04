@@ -1,0 +1,56 @@
+---
+import type { CardProps } from "./types";
+import { twMerge } from "tailwind-merge";
+
+interface Props extends CardProps {
+  // Additional card-specific props
+}
+
+const {
+  padding = "md",
+  shadow = "sm",
+  bordered = true,
+  hoverable = false,
+  className,
+  ...rest
+} = Astro.props;
+
+// Base styles
+const baseStyles =
+  "bg-white dark:bg-gray-800 rounded-lg overflow-hidden transition-all duration-200";
+
+// Padding variations
+const paddingStyles = {
+  none: "",
+  sm: "p-4",
+  md: "p-6",
+  lg: "p-8",
+};
+
+// Shadow variations
+const shadowStyles = {
+  none: "",
+  sm: "shadow-sm",
+  md: "shadow-md",
+  lg: "shadow-lg",
+};
+
+// State styles
+const stateStyles = {
+  bordered: "border border-gray-200 dark:border-gray-700",
+  hoverable: "hover:shadow-md dark:hover:shadow-gray-700/25",
+};
+
+const cardStyles = twMerge(
+  baseStyles,
+  paddingStyles[padding],
+  shadowStyles[shadow],
+  bordered && stateStyles.bordered,
+  hoverable && stateStyles.hoverable,
+  className
+);
+---
+
+<div class={cardStyles} {...rest}>
+  <slot />
+</div>
