@@ -1,7 +1,0 @@
-- Improve blog page style
-- Add blog authors and series
-- Implement deployment strategy
-- Improve about page
-- Cleanup readme
-- Break down large components as need for modularity
-- SEO
