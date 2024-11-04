@@ -1,0 +1,749 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navigation from "../components/shared/Navigation.astro";
+import Journey from "../components/about/Journey.astro";
+
+const title = "About Kane Montreuil - DevOps & Developer Experience Engineer";
+const description =
+  "A decade of experience transforming development workflows and building exceptional developer experiences.";
+
+const currentlyReading = [
+  {
+    title: "Team Topologies",
+    author: "Matthew Skelton & Manuel Pais",
+    insight:
+      "Rethinking how we structure teams for optimal cognitive load and flow",
+  },
+  {
+    title: "The Staff Engineer's Path",
+    author: "Tanya Reilly",
+    insight: "Deep insights into technical leadership and system design",
+  },
+];
+
+const influences = [
+  {
+    category: "Infrastructure & Systems",
+    items: [
+      "Thoughtworks Tech Radar",
+      "Architecture Weekly",
+      "Container Journal",
+    ],
+  },
+  {
+    category: "Product & Design",
+    items: ["Lenny's Newsletter", "Increment Magazine", "High Growth Handbook"],
+  },
+  {
+    category: "Developer Experience",
+    items: [
+      "DX Blog",
+      "Internal Developer Platform",
+      "DevEx: The DevRel Newsletter",
+    ],
+  },
+];
+---
+
+<BaseLayout {title} {description}>
+  <Navigation />
+
+  <main class="relative pt-16">
+    {/* Hero Section */}
+    <section
+      class="relative min-h-[85vh] flex items-center justify-center overflow-hidden"
+    >
+      {/* Background Elements */}
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800"
+      >
+        <div
+          class="absolute inset-0"
+          style="background-image: radial-gradient(circle at 1px 1px, rgb(99 102 241) 1px, transparent 0); background-size: 40px 40px; opacity: 0.1;"
+        >
+        </div>
+      </div>
+
+      {/* Floating Elements - Purely Decorative */}
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div
+          class="absolute top-1/4 left-4 w-72 h-72 bg-indigo-400/30 dark:bg-indigo-600/20 rounded-full blur-3xl"
+        >
+        </div>
+        <div
+          class="absolute bottom-1/4 right-4 w-72 h-72 bg-blue-400/30 dark:bg-blue-600/20 rounded-full blur-3xl"
+        >
+        </div>
+      </div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center">
+          <div
+            class="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-indigo-50 text-indigo-600 dark:bg-indigo-900/50 dark:text-indigo-300 mb-6 animate-fade-in"
+          >
+            <span class="flex h-2 w-2 mr-2 relative">
+              <span
+                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"
+              ></span>
+              <span
+                class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"
+              ></span>
+            </span>
+            DevOps Architect & Experience Engineer
+          </div>
+
+          <h1
+            class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight animate-fade-in"
+          >
+            <span class="block text-gray-900 dark:text-white mb-2"
+              >Hi, I'm Kane</span
+            >
+            <span
+              class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-blue-500 dark:from-indigo-400 dark:to-blue-400"
+            >
+              Building Better Developer Experiences
+            </span>
+          </h1>
+
+          <div
+            class="mt-8 prose dark:prose-invert prose-lg mx-auto animate-fade-in-delayed"
+          >
+            <p class="lead text-xl text-gray-500 dark:text-gray-400">
+              I've always been fascinated by how things work—and how they could
+              work better. This curiosity, combined with a decade in software
+              development, has shaped my mission: transforming how teams build
+              software.
+            </p>
+            <p class="text-gray-600 dark:text-gray-300">
+              What drives me isn't just the technology—it's seeing the impact on
+              developers' daily lives. When a team deploys confidently for the
+              first time, when a new developer makes their first commit on day
+              one, when a previously stressed team starts enjoying their work
+              again—these moments fuel my passion for DevOps and developer
+              experience.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Why I Do This - Personal Mission */}
+    <section class="relative py-24 bg-white dark:bg-gray-900 overflow-hidden">
+      {/* Background Pattern */}
+      <div class="absolute inset-0 opacity-[0.03] dark:opacity-[0.075]">
+        <div
+          class="absolute inset-0 bg-[radial-gradient(#6366F1_1px,transparent_1px)] [background-size:40px_40px]"
+        >
+        </div>
+      </div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-start">
+          <div class="relative">
+            <div class="sticky top-24">
+              <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                Why I Do This
+              </h2>
+              <div class="prose dark:prose-invert">
+                <p class="text-lg text-gray-600 dark:text-gray-300">
+                  Throughout my career, I've witnessed talented developers
+                  spending countless hours wrestling with deployment processes,
+                  environment inconsistencies, and manual tasks—time that could
+                  be spent building amazing features.
+                </p>
+                <p class="text-lg text-gray-600 dark:text-gray-300">
+                  This wasn't a sudden realization, but a gradual understanding
+                  built through years of experiencing these pain points
+                  firsthand. From customizing development environments to
+                  automating build processes, I found myself naturally drawn to
+                  improving the systems around me.
+                </p>
+                <p class="text-lg text-gray-600 dark:text-gray-300">
+                  Today, this has evolved into a deeper mission: creating
+                  development environments where innovation thrives, where
+                  processes enhance rather than hinder creativity, and where
+                  developers can focus on what they do best—solving real
+                  problems.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-8">
+            {/* Impact Cards */}
+            <div class="group relative">
+              <div
+                class="absolute -inset-0.5 bg-gradient-to-r from-indigo-600 to-blue-600 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"
+              >
+              </div>
+              <div
+                class="relative p-6 bg-white dark:bg-gray-800 ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-start space-x-6"
+              >
+                <svg
+                  class="w-8 h-8 text-indigo-600 dark:text-indigo-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+                <div class="space-y-2">
+                  <p class="text-slate-800 dark:text-white text-lg font-medium">
+                    Latest Achievement
+                  </p>
+                  <p class="text-slate-600 dark:text-slate-400">
+                    Helped a team reduce their deployment time from 90 minutes
+                    to 5 minutes while improving reliability and confidence.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="group relative">
+              <div
+                class="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"
+              >
+              </div>
+              <div
+                class="relative p-6 bg-white dark:bg-gray-800 ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-start space-x-6"
+              >
+                <svg
+                  class="w-8 h-8 text-indigo-600 dark:text-indigo-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                  ></path>
+                </svg>
+                <div class="space-y-2">
+                  <p class="text-slate-800 dark:text-white text-lg font-medium">
+                    Current Focus
+                  </p>
+                  <p class="text-slate-600 dark:text-slate-400">
+                    Exploring the intersection of platform engineering and
+                    developer experience to create more intuitive development
+                    environments.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Quote */}
+            <blockquote
+              class="relative p-8 bg-indigo-50 dark:bg-indigo-900/30 rounded-2xl"
+            >
+              <div
+                class="absolute -top-4 -left-4 text-indigo-300 dark:text-indigo-600 transform scale-150"
+              >
+                <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 32 32">
+                  <path
+                    d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"
+                  ></path>
+                </svg>
+              </div>
+              <p class="relative text-indigo-900 dark:text-indigo-200 italic">
+                Great developer experience isn't just about tools and
+                automation—it's about understanding how developers think, work,
+                and create.
+              </p>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Philosophy & Approach */}
+    <section
+      class="relative py-24 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 overflow-hidden"
+    >
+      {/* Decorative background elements */}
+      <div class="absolute inset-0">
+        <div
+          class="absolute inset-0 bg-grid-slate-100 dark:bg-grid-slate-800/[0.1] [mask-image:linear-gradient(0deg,white,transparent)] dark:[mask-image:linear-gradient(0deg,rgba(17,24,39,1),transparent)]"
+        >
+        </div>
+      </div>
+
+      <div class="absolute inset-y-0 right-0 w-1/2">
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-transparent to-indigo-500/5 dark:to-indigo-500/10"
+        >
+        </div>
+      </div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div
+              class="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-indigo-50 text-indigo-600 dark:bg-indigo-900/50 dark:text-indigo-300 mb-6"
+            >
+              My Approach
+            </div>
+            <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-6">
+              Philosophy & Approach
+            </h2>
+            <div class="prose dark:prose-invert">
+              <p class="text-lg text-gray-600 dark:text-gray-300">
+                I believe exceptional developer experiences don't happen by
+                accident—they're crafted through intentional design, automation,
+                and a deep understanding of how developers work.
+              </p>
+              <p class="text-lg text-gray-600 dark:text-gray-300">
+                My approach combines technical expertise with empathy for the
+                developer journey. Having been in the trenches, I understand
+                that the best solutions are those that feel natural and
+                intuitive to use.
+              </p>
+              <p class="text-lg text-gray-600 dark:text-gray-300">
+                Every organization is unique, but the fundamentals of great
+                developer experience remain constant: automate the tedious,
+                secure the essential, and empower the team.
+              </p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-6">
+            {
+              [
+                {
+                  icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>`,
+                  title: "Human-Centered",
+                  description:
+                    "Great DevOps is about people first, technology second.",
+                  gradient: "from-blue-500 to-indigo-500",
+                },
+                {
+                  icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>`,
+                  title: "Trust Through Process",
+                  description:
+                    "Building confidence through reliable, secure systems.",
+                  gradient: "from-indigo-500 to-purple-500",
+                },
+                {
+                  icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>`,
+                  title: "Continuous Learning",
+                  description:
+                    "Evolving solutions based on real team feedback.",
+                  gradient: "from-purple-500 to-pink-500",
+                },
+                {
+                  icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" /></svg>`,
+                  title: "Pragmatic Solutions",
+                  description:
+                    "Finding the right balance of ideal and practical.",
+                  gradient: "from-pink-500 to-rose-500",
+                },
+              ].map((item) => (
+                <div class="group relative">
+                  <div
+                    class={`absolute -inset-0.5 bg-gradient-to-r ${item.gradient} rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-200`}
+                  />
+                  <div class="relative bg-white dark:bg-gray-800 p-6 rounded-lg ring-1 ring-gray-900/5">
+                    <div class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-white to-indigo-50 dark:from-gray-800 dark:to-gray-700 rounded-xl text-indigo-600 dark:text-indigo-400 group-hover:scale-110 transition-transform duration-200 mb-4 ring-1 ring-gray-900/5">
+                      <Fragment set:html={item.icon} />
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                      {item.title}
+                    </h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Learning & Growth */}
+    <section class="relative py-24 bg-white dark:bg-gray-900 overflow-hidden">
+      {/* Floating orbs */}
+      <div class="absolute inset-0 overflow-hidden">
+        <div
+          class="absolute -top-40 -right-40 w-80 h-80 bg-indigo-100/40 dark:bg-indigo-900/20 rounded-full blur-3xl"
+        >
+        </div>
+        <div
+          class="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-100/40 dark:bg-blue-900/20 rounded-full blur-3xl"
+        >
+        </div>
+      </div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <div
+            class="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-indigo-50 text-indigo-600 dark:bg-indigo-900/50 dark:text-indigo-300 mb-6"
+          >
+            Growing & Learning
+          </div>
+          <h2 class="text-4xl font-bold text-gray-900 dark:text-white">
+            Never Stop Learning
+          </h2>
+          <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">
+            The best insights often come from unexpected places
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-8">
+          {/* Currently Reading */}
+          <div class="group relative">
+            <div
+              class="absolute -inset-0.5 bg-gradient-to-r from-indigo-600 to-blue-600 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"
+            >
+            </div>
+            <div
+              class="relative h-full bg-white dark:bg-gray-800 rounded-lg p-8"
+            >
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-6">
+                Currently Reading
+              </h3>
+              <div class="space-y-6">
+                {
+                  currentlyReading.map((book) => (
+                    <div class="group/book">
+                      <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-12 h-16 bg-gradient-to-br from-indigo-100 to-blue-100 dark:from-indigo-900 dark:to-blue-900 rounded group-hover/book:scale-105 transition-transform duration-200" />
+                        <div>
+                          <h4 class="text-lg font-medium text-gray-900 dark:text-white group-hover/book:text-indigo-600 dark:group-hover/book:text-indigo-400 transition-colors">
+                            {book.title}
+                          </h4>
+                          <p class="text-sm text-gray-600 dark:text-gray-400">
+                            by {book.author}
+                          </p>
+                          <p class="mt-2 text-sm text-gray-500 dark:text-gray-500 italic">
+                            "{book.insight}"
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  ))
+                }
+              </div>
+
+              <div class="mt-8">
+                <a
+                  href="/blog/learning"
+                  class="inline-flex items-center text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:text-indigo-500"
+                >
+                  Read my learning journal
+                  <svg
+                    class="ml-2 w-4 h-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* What Shapes My Thinking */}
+          <div class="group relative">
+            <div
+              class="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"
+            >
+            </div>
+            <div
+              class="relative h-full bg-white dark:bg-gray-800 rounded-lg p-8"
+            >
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-6">
+                What Shapes My Thinking
+              </h3>
+              <div class="space-y-8">
+                {
+                  influences.map((category) => (
+                    <div>
+                      <h4 class="text-sm font-medium text-indigo-600 dark:text-indigo-400 uppercase tracking-wide mb-3">
+                        {category.category}
+                      </h4>
+                      <ul class="space-y-2">
+                        {category.items.map((item) => (
+                          <li class="flex items-center text-gray-600 dark:text-gray-400 group/item">
+                            <svg
+                              class="w-4 h-4 mr-2 text-gray-400 dark:text-gray-500 group-hover/item:text-indigo-500 transition-colors"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M9 5l7 7-7 7"
+                              />
+                            </svg>
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))
+                }
+              </div>
+
+              <div class="mt-8">
+                <a
+                  href="/blog/thinking"
+                  class="inline-flex items-center text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:text-indigo-500"
+                >
+                  Explore my detailed analysis
+                  <svg
+                    class="ml-2 w-4 h-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Journey Timeline */}
+    <section
+      class="relative py-24 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 overflow-hidden"
+    >
+      {/* Background Elements */}
+      <div class="absolute inset-0">
+        <div
+          class="absolute inset-0 bg-[radial-gradient(#6366F1_1px,transparent_1px)] [background-size:40px_40px] opacity-[0.15]"
+        >
+        </div>
+        <div
+          class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent"
+        >
+        </div>
+      </div>
+
+      {/* Floating Elements */}
+      <div class="absolute inset-0 overflow-hidden">
+        <div
+          class="absolute left-1/4 w-1/2 h-1/2 bg-gradient-to-br from-indigo-500/20 to-blue-500/20 blur-3xl opacity-50 dark:opacity-30 transform -translate-y-1/2"
+        >
+        </div>
+        <div
+          class="absolute right-1/4 bottom-0 w-1/2 h-1/2 bg-gradient-to-br from-blue-500/20 to-indigo-500/20 blur-3xl opacity-50 dark:opacity-30 transform translate-y-1/2"
+        >
+        </div>
+      </div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <div
+            class="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-indigo-50 text-indigo-600 dark:bg-indigo-900/50 dark:text-indigo-300 mb-6"
+          >
+            The Journey
+          </div>
+          <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-6">
+            Professional Journey
+          </h2>
+          <p class="text-lg text-gray-600 dark:text-gray-400">
+            A path driven by passion for better developer experiences
+          </p>
+        </div>
+
+        {/* Timeline Component */}
+        <div class="relative z-10">
+          <Journey />
+        </div>
+
+        {/* Quote */}
+        <div class="mt-16 max-w-3xl mx-auto">
+          <figure
+            class="relative bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-md shadow-indigo-500/5"
+          >
+            <div
+              class="absolute -top-4 -left-4 w-16 h-16 flex items-center justify-center"
+            >
+              <svg
+                class="w-8 h-8 text-indigo-500/20"
+                fill="currentColor"
+                viewBox="0 0 32 32"
+              >
+                <path
+                  d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"
+                ></path>
+              </svg>
+            </div>
+            <blockquote class="relative">
+              <p class="text-lg font-medium text-gray-900 dark:text-white">
+                Every role and project has reinforced my belief that great
+                developer experiences are the foundation of great software. It's
+                not just about the tools—it's about creating an environment
+                where developers can do their best work.
+              </p>
+            </blockquote>
+            <figcaption class="mt-6 flex items-center gap-x-4">
+              <div
+                class="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-blue-500 flex items-center justify-center text-white font-bold text-xl"
+              >
+                K
+              </div>
+              <div>
+                <div
+                  class="text-base font-semibold text-gray-900 dark:text-white"
+                >
+                  Kane Montreuil
+                </div>
+                <div class="text-sm text-gray-600 dark:text-gray-400">
+                  DevOps Architect
+                </div>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    {/* CTA Section */}
+    <section class="relative py-24 overflow-hidden">
+      {/* Background with gradient overlay */}
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-indigo-600 to-blue-700 dark:from-indigo-900 dark:to-blue-900"
+      >
+        <div
+          class="absolute inset-0 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px] opacity-10"
+        >
+        </div>
+      </div>
+
+      {/* Floating orbs */}
+      <div class="absolute inset-0 overflow-hidden">
+        <div
+          class="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl"
+        >
+        </div>
+        <div
+          class="absolute -bottom-40 -left-40 w-80 h-80 bg-white/10 rounded-full blur-3xl"
+        >
+        </div>
+      </div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">
+            Let's Build Something Great Together
+          </h2>
+          <p class="text-xl text-indigo-100 mb-8">
+            Ready to transform your development experience? Let's start a
+            conversation about how we can help your team achieve DevOps
+            excellence.
+          </p>
+
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a
+              href="/contact"
+              class="inline-flex items-center justify-center px-8 py-3 text-base font-medium rounded-lg text-indigo-600 bg-white hover:bg-indigo-50 transition-all duration-200 transform hover:-translate-y-0.5"
+            >
+              Start a Conversation
+              <svg
+                class="ml-2 -mr-1 w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </a>
+            <a
+              href="/services"
+              class="inline-flex items-center justify-center px-8 py-3 text-base font-medium rounded-lg text-white border-2 border-white/20 hover:bg-white/10 transition-all duration-200 transform hover:-translate-y-0.5"
+            >
+              View Services
+            </a>
+          </div>
+
+          {/* Trust Indicators */}
+          <div class="mt-12 pt-8 border-t border-white/10">
+            <div
+              class="flex flex-wrap justify-center items-center gap-x-8 gap-y-4"
+            >
+              <div class="text-sm text-indigo-100">
+                Available for projects worldwide
+              </div>
+              <div class="text-sm text-indigo-100">
+                <span class="font-semibold">Response time:</span> Within 24 hours
+              </div>
+              <div class="text-sm text-indigo-100">
+                <span class="font-semibold">Current location:</span> United States
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .bg-grid-slate-100 {
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.1) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .bg-grid-slate-800 {
+    background-image: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.1) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out forwards;
+  }
+
+  .animate-fade-in-delayed {
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out forwards;
+    animation-delay: 0.2s;
+  }
+</style>
