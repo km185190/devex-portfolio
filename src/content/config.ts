@@ -40,8 +40,39 @@ const series = defineCollection({
   }),
 });
 
+const caseStudies = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    industry: z.string(),
+    publishDate: z.date(),
+    company: z.string(),
+    duration: z.string(),
+    companySize: z.string(),
+    services: z.array(z.string()),
+    results: z.array(
+      z.object({
+        metric: z.string(),
+        value: z.string(),
+        context: z.string().optional(),
+      })
+    ),
+    technologies: z.array(z.string()),
+    team: z.array(
+      z.object({
+        name: z.string(),
+        role: z.string(),
+        testimonial: z.string().optional(),
+      })
+    ),
+    featured: z.boolean().default(false),
+  }),
+});
+
 export const collections = {
   blog,
   authors,
   series,
+  caseStudies,
 };

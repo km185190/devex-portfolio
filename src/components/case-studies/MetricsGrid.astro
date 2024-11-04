@@ -1,0 +1,31 @@
+---
+interface Props {
+  results: Array<{
+    metric: string;
+    value: string;
+    context?: string;
+  }>;
+}
+
+const { results } = Astro.props;
+---
+
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+  {
+    results.map((result) => (
+      <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+        <div class="text-3xl font-bold text-indigo-600 dark:text-indigo-400 mb-2">
+          {result.value}
+        </div>
+        <div class="text-sm font-medium text-gray-900 dark:text-white mb-1">
+          {result.metric}
+        </div>
+        {result.context && (
+          <div class="text-sm text-gray-500 dark:text-gray-400">
+            {result.context}
+          </div>
+        )}
+      </div>
+    ))
+  }
+</div>

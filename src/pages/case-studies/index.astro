@@ -1,0 +1,72 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navigation from "../../components/shared/Navigation.astro";
+import CaseStudyCard from "../../components/case-studies/CaseStudyCard.astro";
+
+const caseStudies = await getCollection("caseStudies");
+const featuredStudies = caseStudies.filter((study) => study.data.featured);
+const otherStudies = caseStudies.filter((study) => !study.data.featured);
+---
+
+<BaseLayout
+  title="Case Studies - DevOps Transformation Success Stories"
+  description="Real-world examples of successful DevOps transformations and their measurable impacts"
+>
+  <Navigation />
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 pt-24">
+    {/* Hero Section */}
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-6">
+        DevOps Transformation Stories
+      </h1>
+      <p class="text-xl text-gray-600 dark:text-gray-400">
+        Real results from real transformations. See how we've helped teams
+        achieve DevOps excellence and measurable business impact.
+      </p>
+    </div>
+
+    {/* Featured Case Studies */}
+    {
+      featuredStudies.length > 0 && (
+        <div class="mb-16">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+            Featured Success Stories
+          </h2>
+          <div class="grid gap-8 lg:grid-cols-2">
+            {featuredStudies.map((study) => (
+              <CaseStudyCard
+                title={study.data.title}
+                description={study.data.description}
+                industry={study.data.industry}
+                results={study.data.results}
+                slug={study.slug}
+              />
+            ))}
+          </div>
+        </div>
+      )
+    }
+
+    {/* Other Case Studies */}
+    <div>
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+        More Success Stories
+      </h2>
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {
+          otherStudies.map((study) => (
+            <CaseStudyCard
+              title={study.data.title}
+              description={study.data.description}
+              industry={study.data.industry}
+              results={study.data.results}
+              slug={study.slug}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </main>
+</BaseLayout>

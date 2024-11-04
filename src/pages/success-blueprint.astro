@@ -1,0 +1,15 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navigation from "../components/shared/Navigation.astro";
+import SuccessBlueprint from "../components/blueprint/SuccessBlueprint";
+---
+
+<BaseLayout
+  title="DevOps Success Blueprint - Our Proven Transformation Process"
+  description="Discover our proven 4-phase blueprint for successful DevOps transformations, refined through dozens of enterprise implementations."
+>
+  <Navigation />
+  <main>
+    <SuccessBlueprint client:load />
+  </main>
+</BaseLayout>
